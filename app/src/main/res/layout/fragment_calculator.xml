@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -10,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="5dp"
         android:padding="16dp"
         android:layout_weight="1">
 
@@ -31,38 +29,38 @@
         android:layout_marginTop="16dp">
 
         <Button
-            android:id="@+id/button_7"
+            android:id="@+id/button_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="9dp"
-            android:text="7"
+            android:text="C"
             android:backgroundTint="@color/black"
             android:layout_margin="4dp"
             app:layout_constraintWidth_percent="0.23"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <Button
-            android:id="@+id/button_8"
+            android:id="@+id/button_percentage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="8"
+            android:text="%"
             android:backgroundTint="@color/black"
             android:layout_margin="4dp"
             app:layout_constraintWidth_percent="0.23"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/button_7"/>
+            app:layout_constraintLeft_toRightOf="@id/button_cancel" />
 
         <Button
-            android:id="@+id/button_9"
+            android:id="@+id/button_delete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="9"
+            android:text="Del"
             android:backgroundTint="@color/black"
             android:layout_margin="4dp"
-            app:layout_constraintWidth_percent="0.24"
+            app:layout_constraintWidth_percent="0.23"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/button_8"/>
+            app:layout_constraintLeft_toRightOf="@id/button_percentage" />
 
         <Button
             android:id="@+id/button_divide"
@@ -73,6 +71,51 @@
             android:backgroundTint="@color/black"
             app:layout_constraintWidth_percent="0.24"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <Button
+            android:id="@+id/button_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="9dp"
+            android:text="7"
+            android:backgroundTint="@color/black"
+            android:layout_margin="4dp"
+            app:layout_constraintWidth_percent="0.23"
+            app:layout_constraintTop_toBottomOf="@+id/button_cancel"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <Button
+            android:id="@+id/button_8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:backgroundTint="@color/black"
+            android:layout_margin="4dp"
+            app:layout_constraintWidth_percent="0.23"
+            app:layout_constraintTop_toBottomOf="@id/button_percentage"
+            app:layout_constraintLeft_toRightOf="@id/button_7"/>
+
+        <Button
+            android:id="@+id/button_9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:backgroundTint="@color/black"
+            android:layout_margin="4dp"
+            app:layout_constraintWidth_percent="0.24"
+            app:layout_constraintTop_toBottomOf="@id/button_delete"
+            app:layout_constraintLeft_toRightOf="@id/button_8"/>
+
+        <Button
+            android:id="@+id/button_multiply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="*"
+            android:backgroundTint="@color/black"
+            app:layout_constraintWidth_percent="0.24"
+            app:layout_constraintTop_toBottomOf="@id/button_divide"
             app:layout_constraintRight_toRightOf="parent"/>
 
         <Button
@@ -109,14 +152,14 @@
             app:layout_constraintLeft_toRightOf="@id/button_5"/>
 
         <Button
-            android:id="@+id/button_multiply"
+            android:id="@+id/button_subtract"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="*"
+            android:text="-"
             android:backgroundTint="@color/black"
             app:layout_constraintWidth_percent="0.24"
-            app:layout_constraintTop_toBottomOf="@id/button_divide"
+            app:layout_constraintTop_toBottomOf="@id/button_multiply"
             app:layout_constraintRight_toRightOf="parent"/>
 
         <Button
@@ -153,21 +196,21 @@
             app:layout_constraintLeft_toRightOf="@id/button_2"/>
 
         <Button
-            android:id="@+id/button_subtract"
+            android:id="@+id/button_add"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:text="-"
+            android:text="+"
             android:backgroundTint="@color/black"
+            android:layout_margin="4dp"
             app:layout_constraintWidth_percent="0.24"
-            app:layout_constraintTop_toBottomOf="@id/button_multiply"
+            app:layout_constraintTop_toBottomOf="@id/button_subtract"
             app:layout_constraintRight_toRightOf="parent"/>
 
         <Button
-            android:id="@+id/button_decimal"
+            android:id="@+id/button_double_zero"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="."
+            android:text="00"
             android:backgroundTint="@color/black"
             android:layout_margin="4dp"
             app:layout_constraintWidth_percent="0.23"
@@ -183,41 +226,32 @@
             android:layout_margin="4dp"
             app:layout_constraintWidth_percent="0.23"
             app:layout_constraintTop_toBottomOf="@id/button_2"
-            app:layout_constraintLeft_toRightOf="@id/button_decimal" />
+            app:layout_constraintLeft_toRightOf="@id/button_double_zero" />
 
         <Button
-            android:id="@+id/button_add"
+            android:id="@+id/button_decimal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="+"
+            android:text="."
             android:backgroundTint="@color/black"
             android:layout_margin="4dp"
-            app:layout_constraintWidth_percent="0.24"
-            app:layout_constraintTop_toBottomOf="@id/button_subtract"
-            app:layout_constraintRight_toRightOf="parent"/>
-
-        <Button
-            android:id="@+id/button_clear"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="clear"
-            android:backgroundTint="@color/black"
-            android:layout_margin="4dp"
-            app:layout_constraintWidth_percent="0.24"
+            app:layout_constraintWidth_percent="0.23"
             app:layout_constraintTop_toBottomOf="@id/button_3"
-            app:layout_constraintLeft_toRightOf="@id/button_0"/>
+            app:layout_constraintLeft_toRightOf="@id/button_0" />
 
         <Button
             android:id="@+id/button_equals"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="="
-            android:layout_marginTop="10dp"
             android:backgroundTint="@color/black"
-            app:layout_constraintWidth_percent="0.5"
-            app:layout_constraintTop_toBottomOf="@id/button_clear"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="4dp"
+            app:layout_constraintWidth_percent="0.23"
+            app:layout_constraintTop_toBottomOf="@id/button_add"
             app:layout_constraintRight_toRightOf="parent" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

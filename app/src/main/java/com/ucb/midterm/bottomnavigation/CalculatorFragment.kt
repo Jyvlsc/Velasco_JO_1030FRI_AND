@@ -24,6 +24,7 @@ class CalculatorFragment : Fragment() {
         display = view.findViewById(R.id.display)
 
         view.findViewById<View>(R.id.button_0).setOnClickListener { appendNumber("0") }
+        view.findViewById<View>(R.id.button_double_zero).setOnClickListener { appendNumber("00") }
         view.findViewById<View>(R.id.button_1).setOnClickListener { appendNumber("1") }
         view.findViewById<View>(R.id.button_2).setOnClickListener { appendNumber("2") }
         view.findViewById<View>(R.id.button_3).setOnClickListener { appendNumber("3") }
@@ -40,7 +41,23 @@ class CalculatorFragment : Fragment() {
         view.findViewById<View>(R.id.button_divide).setOnClickListener { handleOperator("/") }
 
         view.findViewById<View>(R.id.button_equals).setOnClickListener { calculateResult() }
-        view.findViewById<View>(R.id.button_clear).setOnClickListener { clearDisplay() }
+        view.findViewById<View>(R.id.button_cancel).setOnClickListener { clearDisplay() }
+
+        view.findViewById<View>(R.id.button_percentage).setOnClickListener { v: View? ->
+            if (currentInput.length > 0) {
+                val percentage = currentInput.toString().toDouble() / 100
+                display!!.text = percentage.toString()
+                currentInput.setLength(0)
+                currentInput.append(percentage)
+            }
+        }
+
+        view.findViewById<View>(R.id.button_delete).setOnClickListener { v: View? ->
+            if (currentInput.length > 0) {
+                currentInput.deleteCharAt(currentInput.length - 1)
+                display!!.text = if (currentInput.isNotEmpty()) currentInput.toString() else "0"
+            }
+        }
 
         return view
 
