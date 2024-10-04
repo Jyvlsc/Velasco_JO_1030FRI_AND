@@ -19,6 +19,12 @@ class MainActivity : AppCompatActivity() {
 
         display = findViewById<TextView>(R.id.display)
 
+        findViewById<View>(R.id.button_double_zero).setOnClickListener { v: View? ->
+            appendNumber(
+                "00"
+            )
+        }
+
         findViewById<View>(R.id.button_0).setOnClickListener { v: View? ->
             appendNumber(
                 "0"
@@ -98,7 +104,24 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.button_equals).setOnClickListener { v: View? -> calculateResult() }
 
-        findViewById<View>(R.id.button_clear).setOnClickListener { v: View? -> clearDisplay() }
+        findViewById<View>(R.id.button_cancel).setOnClickListener { v: View? -> clearDisplay() }
+
+        findViewById<View>(R.id.button_percentage).setOnClickListener { v: View? ->
+            if (currentInput.length > 0) {
+                val percentage = currentInput.toString().toDouble() / 100
+                display!!.text = percentage.toString()
+                currentInput.setLength(0)
+                currentInput.append(percentage)
+            }
+        }
+
+        findViewById<View>(R.id.button_delete).setOnClickListener { v: View? ->
+            if (currentInput.length > 0) {
+                currentInput.deleteCharAt(currentInput.length - 1)
+                display!!.text = if (currentInput.isNotEmpty()) currentInput.toString() else "0"
+            }
+        }
+
     }
 
     private fun appendNumber(number: String) {
